@@ -82,6 +82,51 @@ implementing the following ``AE`` callbacks:
 Where *dataset* is a pydicom Dataset object. See the SCP Examples and the AE
 documentation for more information.
 
+App Usage
+---------
+If you wish to use robust forms of the SCU and SCP functionality, you may use 
+the AppUsage class
+
+To import use ``from pynetdicom3 import AppUsage``
+
+If there are issues with finding the pynetdicom3 app files, you may have to change the paths in the AppUsage.py file
+
+Usage
+~~~~~
+To import the class use from pynetdicom3 import AppUsage
+            
+Supported SCU Services
+~~~~~~~~~~~~~~~~~~~~~~
+
+SCU services use the functionality of pynetdicom3's apps 
+
+- C-Echo: ``AppUsage.AppUsage.echoscu(address,title,port)`` used to verify 
+  end-to-end communications with the peer. 
+- C-Find: ``AppUsage.AppUsage.findscu(name,ID,dataset,address,title,port,model)`` 
+  requests the peer search its set of managed SOP Instances for those that match 
+  the attributes given in dataset. 
+- C-Get: ``AppUsage.AppUsage.getscu(name,ID,dataset,address,title,port,model)`` 
+  requests the peer search its set of managed SOP Instances for those that match 
+  the attributes given in dataset then return those matching Instances to the SCU. 
+- C-Move: ``AppUsage.AppUsage.movescu(name,ID,dataset,address,title,port,model,other_ae)`` 
+  requests the peer search its set of managed SOP Instances for those that match 
+  the attributes given in dataset and then copy those matching Instances to the AE
+  with title move_aet over a new association. 
+- C-Store: ``AppUsage.AppUsage.storescu(dataset,address,title,port)`` requests 
+  the storage of the Composite SOP Instance dataset by the peer. 
+
+Supported SCP Services
+~~~~~~~~~~~~~~~~~~~~~~
+
+SCU services use the functionality of pynetdicom3's apps
+
+- C-Echo: ``AppUsage.AppUsage.echoscp(title,port)``
+- C-Find: ``AppUsage.AppUsage.findscp(title,port)``
+- C-Get: ``AppUsage.AppUsage.getscp(tile,port)``
+- C-Move: ``AppUsage.AppUsage.movescp(tile,port)``
+- C-Store: ``AppUsage.AppUsage.storescp(tile,port)``
+
+
 Installation
 -----------
 Dependencies
