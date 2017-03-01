@@ -137,7 +137,7 @@ Installing from github
 ~~~~~~~~~~~~~~~~~~~~~~
 .. code-block:: sh
 
-        $ git clone https://github.com/scaramallion/pynetdicom3.git
+        $ git clone https://github.com/dmoyer6336/pynetdicom3.git
         $ cd pynetdicom3
         $ python setup.py install
 
