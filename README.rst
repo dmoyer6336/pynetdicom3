@@ -95,7 +95,7 @@ To import the class use
         
 You will have to change the path in *AppUsage.py* to the path to the pynetdicom3 app folder
 
-Usage
+Functionality
 ~~~~~~
             
 Supported SCU Services
