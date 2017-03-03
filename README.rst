@@ -94,7 +94,9 @@ If there are issues with finding the pynetdicom3 app files, you may have to chan
 Usage
 ~~~~~
 To import the class use
+
 .. code-block:: python
+
         from pynetdicom3 import AppUsage
         
 You will have to change the path in *AppUsage.py* to the path to the pynetdicom3 app folder
