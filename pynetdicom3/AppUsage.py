@@ -3,7 +3,7 @@ import subprocess
 import sys
 from pydicom.dataset import Dataset
 import pydicom 
-
+import pynetdicom3 
 '''
 This code creates a NETDICOM class which has many DICOM functions such as:
 C-Echo as an SCU or SCP
@@ -28,9 +28,14 @@ Each function uses the corresponding file(ex. echoscp uses echoscp.py) so the
 proper path to the file must be specified in the function definition
 
 '''
+
+path = '/Users/DM12/Desktop/python/PyNetDicom3/pynetdicom3/pynetdicom3/apps/'
+
 class AppUsage:
     
+    
     def runfile(cmd):
+            
         process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, \
                                    stderr=subprocess.STDOUT)
         while True:
@@ -59,8 +64,8 @@ class AppUsage:
                     the default port is 11113
             echoscp may be called as echoscp() to use default title and port
         '''
-        path = os.path.abspath('pynetdicom3')+'/apps/echoscp/echoscp.py'
-        cmd = path +' -aet '+'['+title+'] '+str(port)+' -d' 
+        path1 = path+'echoscp/echoscp.py'
+        cmd = path1 +' -aet '+'['+title+'] '+str(port)+' -d' 
         AppUsage.runfile(cmd)                     
 
         
@@ -78,8 +83,8 @@ class AppUsage:
                     the default port is 11114
             echoscu may be called as echoscu() to use defaults
         '''
-        path = os.path.abspath('pynetdicom3')+'/apps/echoscu/echoscu.py'
-        cmd = path+' '+address+' -aet '+'['+title+'] '+str(port)+' -d' 
+        path1 = path+'echoscu/echoscu.py'
+        cmd = path1+' '+address+' -aet '+'['+title+'] '+str(port)+' -d' 
 
         AppUsage.runfile(cmd)
         
@@ -98,8 +103,8 @@ class AppUsage:
                     the default port is 11115
             findscp may be called as findscp() to use defaults
         '''
-        path = os.path.abspath('pynetdicom3')+'apps/findscp/findscp.py'
-        cmd = path +' -aet '+'['+title+'] '+str(port)+' -d' 
+        path1 = path+'findscp/findscp.py'
+        cmd = path1 +' -aet '+'['+title+'] '+str(port)+' -d' 
                               
         AppUsage.runfile(cmd)
         
@@ -140,8 +145,8 @@ class AppUsage:
             data.QueryRetrieveLevel = 'PATIENT'
             data.save_as('dataset.dcm')
             
-        path = os.path.abspath('pynetdicom3')+'apps/findscu/findscu.py'
-        cmd=path+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
+        path1 = path+'findscu/findscu.py'
+        cmd=path1+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
                                        
         AppUsage.runfile(cmd)
      
@@ -160,8 +165,8 @@ class AppUsage:
                     the default port is 11115
             getscp may be called as getscp() to use defaults
         '''
-        path = os.path.abspath('pynetdicom3')+'/apps/getscp/getscp.py'
-        cmd = path +' -aet '+'['+title+'] '+str(port)+' -d' 
+        path1 = path+'getscp/getscp.py'
+        cmd = path1 +' -aet '+'['+title+'] '+str(port)+' -d' 
                               
         AppUsage.runfile(cmd)
         
@@ -202,8 +207,8 @@ class AppUsage:
             data.QueryRetrieveLevel = 'PATIENT'
             data.save_as('dataset.dcm')
             
-        path = os.path.abspath('pynetdicom3')+'/apps/getscu/getscu.py'
-        cmd=path+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
+        path1 = path+'getscu/getscu.py'
+        cmd=path1+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
         
         AppUsage.runfile(cmd)
         
@@ -234,8 +239,8 @@ class AppUsage:
                     the default port is 11115
             getscp may be called as getscp() to use defaults
         '''
-        path = os.path.abspath('pynetdicom3')+'/apps/movescp/movescp.py'
-        cmd = path +' -aet '+'['+title+'] '+str(port)+' -d'
+        path1 = path+'movescp/movescp.py'
+        cmd = path1 +' -aet '+'['+title+'] '+str(port)+' -d'
                               
         AppUsage.runfile(cmd)
         
@@ -279,8 +284,8 @@ class AppUsage:
             data.QueryRetrieveLevel = 'PATIENT'
             data.save_as('dataset.dcm')
             
-        path = os.path.abspath('pynetdicom3')+'/apps/movescu/movescu.py'
-        cmd=path+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d' 
+        path1 = path+'movescu/movescu.py'
+        cmd=path1+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d' 
                                        
         AppUsage.runfile(cmd)
         
@@ -299,8 +304,8 @@ class AppUsage:
                     the default port is 11102
             getscp may be called as getscp() to use defaults
         '''
-        path = os.path.abspath('pynetdicom3')+'/apps/storescp/storescp.py'
-        cmd = path +' -aet '+'['+title+'] '+str(port)+' -d' 
+        path1 = path+'storescp/storescp.py'
+        cmd = path1 +' -aet '+'['+title+'] '+str(port)+' -d' 
                               
         AppUsage.runfile(cmd)
         
@@ -322,8 +327,8 @@ class AppUsage:
             port: is the port the scu will listen on
                     the default port is 11103
         '''            
-        path = os.path.abspath('pynetdicom3')+'/apps/storescu/storescu.py'
-        cmd=path+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
+        path1 = path+'storescu/storescu.py'
+        cmd=path1+' '+address+' -aet '+'['+title+'] '+str(port)+' '+dataset+' -d'
                                        
         AppUsage.runfile(cmd)
           
