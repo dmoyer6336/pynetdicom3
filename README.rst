@@ -87,12 +87,6 @@ App Usage
 If you wish to use robust forms of the SCU and SCP functionality, you may use 
 the AppUsage class
 
-To import use ``from pynetdicom3 import AppUsage``
-
-If there are issues with finding the pynetdicom3 app files, you may have to change the paths in the AppUsage.py file
-
-Usage
-~~~~~
 To import the class use
 
 .. code-block:: python
@@ -100,6 +94,9 @@ To import the class use
         from pynetdicom3 import AppUsage
         
 You will have to change the path in *AppUsage.py* to the path to the pynetdicom3 app folder
+
+Usage
+~~~~~~
             
 Supported SCU Services
 ~~~~~~~~~~~~~~~~~~~~~~
