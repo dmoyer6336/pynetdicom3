@@ -29,7 +29,7 @@ proper path to the file must be specified in the function definition
 
 '''
 
-path = '/Users/DM12/Desktop/python/PyNetDicom3/pynetdicom3/pynetdicom3/apps/'
+path = 'Path/to/pynetdicom3/pynetdicom3/apps/'
 
 class AppUsage:
     
